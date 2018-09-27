@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: smart-gadget
+  jpa:
+    properties.hibernate.temp.use_jdbc_metadata_defaults: false  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    tomcat:
+            max-wait: 10000
+            max-active: 50
+            validation-query: select 1 from dual
+            test-on-borrow: true
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
+        hibernate: 
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+            ddl-auto: create-drop
+
+server:
+  contextPath: ${spring.application.name}
+  port: 8088
+
+logging:
+  level:
+    org:
+      springframework: INFO 
+
+  
