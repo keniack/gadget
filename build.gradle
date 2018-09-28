@@ -20,6 +20,7 @@ apply plugin: 'io.spring.dependency-management'
 group = 'com.smart.blind'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
@@ -33,4 +34,11 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	runtime('org.postgresql:postgresql')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+bootRun {
+    String activeProfile =  System.properties['spring.profiles.active']
+    String confLoc = System.properties['spring.config.location']
+    systemProperty "spring.profiles.active", activeProfile
+    systemProperty "spring.config.location", "file:$confLoc"
 }

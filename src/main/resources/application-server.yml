@@ -1,27 +1,11 @@
 spring:
-  application:
-    name: smart-gadget
   datasource:
-    platform: postgres
     url: jdbc:postgresql://localhost:5432/gadget-testdb
     username: gadget
     password: gadget123
-    driver-class-name: org.postgresql.Driver
-    tomcat:
-            max-wait: 10000
-            max-active: 50
-            validation-query: select 1 from dual
-            test-on-borrow: true
-    jpa:
-        database-platform: org.hibernate.dialect.PostgreSQLDialect
-        hibernate: 
-            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
-            ddl-auto: create-drop
-        show-sql: true
 
 server:
-  contextPath: ${spring.application.name}
-  port: 8088
+  port: 8081
 
 logging:
   level:
