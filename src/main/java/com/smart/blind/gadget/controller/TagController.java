@@ -28,13 +28,13 @@ public class TagController {
 
 	@GetMapping("/tags")
 	@ResponseBody
-	public Page<Tag> getQuestions(Pageable pageable) {
+	public Page<Tag> getTags(Pageable pageable) {
 		return tagService.findAll(pageable);
 	}
 
 	@PostMapping("/tags")
 	@ResponseBody
-	public Tag createQuestion(@Valid @RequestBody Tag tag) {
+	public Tag createTag(@Valid @RequestBody Tag tag) {
 		return tagService.save(tag);
 	}
 

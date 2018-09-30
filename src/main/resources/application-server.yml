@@ -1,15 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/gadget-testdb
+    url: jdbc:postgresql://localhost:5432/gadgetdb
     username: gadget
     password: gadget123
 
 server:
-  port: 8081
-
-logging:
-  level:
-    org:
-      springframework: DEBUG 
-
-  
+  port: 8081  
