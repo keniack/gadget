@@ -4,5 +4,3 @@ spring:
     username: gadget
     password: gadget123
 
-server:
-  port: 8081  
